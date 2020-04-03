@@ -16,7 +16,7 @@ Once complete, proceed to [step 8](#step8).
 
 For building individual platforms:
 ```bash
-$ bash ./build_builder.sh # installs the base virtual machine (ubuntu 12.04 trusty) and dependencies, takes 5-10 minutes
+$ bash ./build_builder.sh # installs the base virtual machine (ubuntu 18 bionic) and dependencies, takes 5-10 minutes
 $ bash ./run_builder.sh # builds devault itself per the argument to the CMD instruction in Dockerfile, takes 30+ minutes
 ```
 

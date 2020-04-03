@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:bionic
 MAINTAINER Chris Kleeschulte <chrisk@bitpay.com>
 ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /shared
