@@ -15,6 +15,7 @@ apt-get install sudo > /dev/null 2>&1 || true && \
 apt-get -y dist-upgrade && \
 locale-gen en_US.UTF-8 && \
 update-locale LANG=en_US.UTF-8 && \
+mkdir /home/ubuntu/ && \
 bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder'
 USER root
 RUN printf "[[ -d /shared/devault ]] || \
