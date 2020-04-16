@@ -20,6 +20,6 @@ USER root
 RUN printf "[[ -d /shared/devault ]] || \
 git clone https://github.com/devaultcrypto/devault /shared/devault && \
 cd /shared/gitian-builder; \
-./bin/gbuild --skip-image --commit devault=\$1 --url devault=\$2 \$3" > /home/root/runit.sh
+./bin/gbuild --skip-image --commit devault=\$1 --url devault=\$2 \$3" > /root/runit.sh
 CMD ["develop","https://github.com/devaultcrypto/devault.git","/shared/devault/contrib/gitian-descriptors/gitian-linux.yml"]
-ENTRYPOINT ["sudo","bash", "/home/root/runit.sh"]
+ENTRYPOINT ["sudo","bash", "/root/runit.sh"]
