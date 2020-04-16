@@ -26,9 +26,8 @@ chmod 0400 /etc/sudoers.d/ubuntu && \
 chown -R ubuntu.ubuntu /home/ubuntu
 
 USER ubuntu
-RUN git clone https://github.com/devaultcrypto/devault  /shared/devault
 RUN printf "[[ -d /shared/devault ]] || \
-git clone -b \$1 --depth 1 \$2 /shared/devault && \
+git clone https://github.com/devaultcrypto/devault /shared/devault && \
 cd /shared/gitian-builder; \
 ./bin/gbuild --skip-image --commit devault=\$1 --url devault=\$2 \$3" > /home/ubuntu/runit.sh
 CMD ["develop","https://github.com/devaultcrypto/devault.git","../devault/contrib/gitian-descriptors/gitian-linux.yml"]
