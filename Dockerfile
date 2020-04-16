@@ -15,16 +15,7 @@ apt-get install sudo > /dev/null 2>&1 || true && \
 apt-get -y dist-upgrade && \
 locale-gen en_US.UTF-8 && \
 update-locale LANG=en_US.UTF-8 && \
-bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder' && \
-useradd -d /home/root -m -s /bin/bash root && \
-chown -R root.root /shared/ && \
-chown root.root /shared/gitian-builder/target-bin/grab-packages.sh && \
-chmod 755 /shared/gitian-builder/target-bin/grab-packages.sh && \
-echo 'root ALL=(root) NOPASSWD:/usr/bin/apt-get,/shared/gitian-builder/target-bin/grab-packages.sh' > /etc/sudoers.d/root && \
-chown root.root /etc/sudoers.d/root && \
-chmod 0400 /etc/sudoers.d/root && \
-chown -R root.root /home/root
-
+bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder'
 USER root
 RUN printf "[[ -d /shared/devault ]] || \
 git clone https://github.com/devaultcrypto/devault /shared/devault && \
