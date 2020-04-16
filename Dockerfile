@@ -11,6 +11,7 @@ ca-certificates \
 ruby \
 rsync && \
 apt-get -yq purge grub > /dev/null 2>&1 || true && \
+apt-get install sudo > /dev/null 2>&1 || true && \
 apt-get -y dist-upgrade && \
 locale-gen en_US.UTF-8 && \
 update-locale LANG=en_US.UTF-8 && \
