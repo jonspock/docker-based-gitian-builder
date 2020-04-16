@@ -24,7 +24,9 @@ echo 'ubuntu ALL=(root) NOPASSWD:/usr/bin/apt-get,/shared/gitian-builder/target-
 chown root.root /etc/sudoers.d/ubuntu && \
 chmod 0400 /etc/sudoers.d/ubuntu && \
 chown -R ubuntu.ubuntu /home/ubuntu
+
 USER ubuntu
+RUN git clone https://github.com/devaultcrypto/devault
 RUN printf "[[ -d /shared/devault ]] || \
 git clone -b \$1 --depth 1 \$2 /shared/devault && \
 cd /shared/gitian-builder; \
