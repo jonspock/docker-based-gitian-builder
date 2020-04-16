@@ -17,6 +17,7 @@ locale-gen en_US.UTF-8 && \
 update-locale LANG=en_US.UTF-8 && \
 mkdir /home/ubuntu/ && \
 bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder' && \
+mkdir /shared/gitian-builder/inputs/ && \
 wget https://bitcoincore.org/depends-sources/sdks/MacOSX10.14.tar.gz -O /shared/gitian-builder/inputs/MacOSX10.14.tar.gz
 USER root
 RUN printf "[[ -d /shared/devault ]] || \
