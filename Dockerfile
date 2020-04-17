@@ -18,7 +18,7 @@ update-locale LANG=en_US.UTF-8 && \
 mkdir /home/ubuntu/ && \
 bash -c '[[ -d /shared/gitian-builder ]] || git clone https://github.com/kleetus/gitian-builder /shared/gitian-builder' && \
 chmod -R 775 /shared/gitian-builder/target-bin/
-RUN if [[ $3 == *"osx"* ]]; then mkdir /shared/gitian-builder/inputs/ && \ wget https://bitcoincore.org/depends-sources/sdks/MacOSX10.14.sdk.tar.gz -O /shared/gitian-builder/inputs/MacOSX10.14.sdk.tar.gz;fi
+RUN if [[ $3 == *"osx"* ]]; then mkdir /shared/gitian-builder/inputs/ && wget https://bitcoincore.org/depends-sources/sdks/MacOSX10.14.sdk.tar.gz -O /shared/gitian-builder/inputs/MacOSX10.14.sdk.tar.gz;fi
 USER root
 RUN printf "[[ -d /shared/devault ]] || \
 git clone https://github.com/devaultcrypto/devault /shared/devault && \
